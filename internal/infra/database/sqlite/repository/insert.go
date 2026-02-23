@@ -1,8 +1,15 @@
 package repository
 
-import "github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/entity"
+import (
+	"context"
+	"time"
+
+	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/entity"
+)
 
 func (r *Repository) Insert(cambio *entity.Cambio) error {
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Millisecond)
+	defer cancel()
 	stmt, err := r.Sqlite.Prepare(
 		`INSERT INTO cambio( 
 			code TEXT NOT NULL,
@@ -21,7 +28,7 @@ func (r *Repository) Insert(cambio *entity.Cambio) error {
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec(
+	_, err = stmt.ExecContext(ctx,
 		cambio.USDBRL.Code,
 		cambio.USDBRL.Codein,
 		cambio.USDBRL.Name,
