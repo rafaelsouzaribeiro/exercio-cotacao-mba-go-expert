@@ -2,10 +2,10 @@ package repository
 
 import "database/sql"
 
-type repository struct {
+type Repository struct {
 	Sqlite *sql.DB
 }
 
-func Newrepository(sqlite *sql.DB) *repository {
-	return &repository{Sqlite: sqlite}
+func NewRepository(sqlite *sql.DB) *Repository {
+	return &Repository{Sqlite: sqlite}
 }
