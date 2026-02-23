@@ -1,5 +1,5 @@
 package handlers
 
 func (h *Usecase) Create() error {
-	return h.Create()
+	return h.Usecase.Create()
 }

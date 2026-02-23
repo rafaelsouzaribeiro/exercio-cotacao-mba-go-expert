@@ -10,7 +10,7 @@ import (
 
 func main() {
 	server := server.NewServer()
-	db, err := connection.NewSqliteConnection("./")
+	db, err := connection.NewSqliteConnection("./cambio.db")
 
 	if err != nil {
 		panic(err)
