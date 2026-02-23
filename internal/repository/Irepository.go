@@ -4,4 +4,5 @@ import "github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/ent
 
 type IRepository interface {
 	Insert(cambio *entity.Cambio) error
+	Create() error
 }
