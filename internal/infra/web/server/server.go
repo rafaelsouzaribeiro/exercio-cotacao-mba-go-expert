@@ -13,3 +13,7 @@ func NewServer() *Server {
 		mux: http.NewServeMux(),
 	}
 }
+
+func (s *Server) SetRoute() {
+
+}
