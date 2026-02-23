@@ -15,7 +15,9 @@ func main() {
 		panic(err)
 	}
 
-	repository := repository.Newrepository(db)
+	repository := repository.NewRepository(db)
 	usecase := usecase.NewUsecase(repository)
+	server.SetRoute()
+	server.Start()
 
 }
