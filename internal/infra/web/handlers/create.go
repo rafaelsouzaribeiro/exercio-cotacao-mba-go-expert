@@ -1,5 +1,5 @@
 package handlers
 
-func (h *Usecase) Create() error {
-	return h.Usecase.Create()
+func (h *UsecaseServer) Create() error {
+	return h.UsecaseServer.Create()
 }

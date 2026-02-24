@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/web/handlers"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
+	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase/server"
 )
 
 type Server struct {
@@ -17,7 +17,7 @@ func NewServer() *Server {
 	}
 }
 
-func (s *Server) SetRoute(usecase *usecase.UseCase) {
+func (s *Server) SetRoute(usecase *server.UseCaseServer) {
 	handler := handlers.NewHandler(usecase)
 	handler.Create()
 	s.mux.HandleFunc("/cambio", handler.Cambio)

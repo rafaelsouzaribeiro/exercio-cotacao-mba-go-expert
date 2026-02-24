@@ -9,7 +9,7 @@ import (
 	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/entity"
 )
 
-func (h *Usecase) Cambio(w http.ResponseWriter, r *http.Request) {
+func (h *UsecaseServer) Cambio(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(context.Background(), 200*time.Millisecond)
 	defer cancel()
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "https://economia.awesomeapi.com.br/json/last/USD-BRL", nil)
