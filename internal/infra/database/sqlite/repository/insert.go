@@ -2,13 +2,14 @@ package repository
 
 import (
 	"context"
+	"log"
 	"time"
 
 	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/entity"
 )
 
 func (r *Repository) Insert(cambio *entity.Cambio) error {
-	ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second) // Increased timeout
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Millisecond)
 	defer cancel()
 	stmt, err := r.Sqlite.Prepare(`
         INSERT INTO cambio (code, codein, name, high, low, var_bid, pct_change, bid, ask, timestamp, create_date)
@@ -32,5 +33,10 @@ func (r *Repository) Insert(cambio *entity.Cambio) error {
 		cambio.USDBRL.Timestamp,
 		cambio.USDBRL.CreateDate,
 	)
+
+	if err != nil {
+		log.Println("Erro no contexto da inserção:", err)
+	}
+
 	return err
 }

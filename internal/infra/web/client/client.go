@@ -3,6 +3,7 @@ package client
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"net/http"
 	"time"
 
@@ -17,6 +18,7 @@ func (c *Client) CreateFile() error {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "http://localhost:8080/cotacao", nil)
 
 	if err != nil {
+		log.Println("Erro no contexto da requisição:", err)
 		return err
 	}
 

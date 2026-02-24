@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"net/http"
 	"time"
 
@@ -15,6 +16,7 @@ func (h *Usecase) Cotacao(w http.ResponseWriter, r *http.Request) {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "https://economia.awesomeapi.com.br/json/last/USD-BRL", nil)
 
 	if err != nil {
+		log.Println("Erro no contexto da requisição:", err)
 		http.Error(w, "Erro ao criar a requisição", http.StatusInternalServerError)
 		return
 	}
