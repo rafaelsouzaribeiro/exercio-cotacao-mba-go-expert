@@ -19,7 +19,11 @@ func NewServer() *Server {
 
 func (s *Server) SetRoute(usecase *usecase.UseCase) {
 	handler := handlers.NewHandler(usecase)
-	handler.Create()
+	err := handler.Create()
+
+	if err != nil {
+		panic(err)
+	}
 	s.mux.HandleFunc("/cambio", handler.Cambio)
 }
 

@@ -32,6 +32,12 @@ func (h *Usecase) Cambio(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	err = h.Usecase.Insert(&cambio)
+	if err != nil {
+		http.Error(w, "Erro ao inserir no banco de dados", http.StatusInternalServerError)
+		return
+	}
+
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(cambio)
 }

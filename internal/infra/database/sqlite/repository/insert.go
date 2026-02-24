@@ -8,21 +8,12 @@ import (
 )
 
 func (r *Repository) Insert(cambio *entity.Cambio) error {
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Millisecond)
+	ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second) // Increased timeout
 	defer cancel()
-	stmt, err := r.Sqlite.Prepare(
-		`INSERT INTO cambio( 
-			code TEXT NOT NULL,
-            codein TEXT NOT NULL,
-            name TEXT NOT NULL,
-            high REAL NOT NULL,
-            low REAL NOT NULL,
-            var_bid REAL NOT NULL,
-            pct_change REAL NOT NULL,
-            bid REAL NOT NULL,
-            ask REAL NOT NULL,
-            timestamp TEXT NOT NULL,
-            create_date TEXT NOT NULL) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`)
+	stmt, err := r.Sqlite.Prepare(`
+        INSERT INTO cambio (code, codein, name, high, low, var_bid, pct_change, bid, ask, timestamp, create_date)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `)
 	if err != nil {
 		return err
 	}
@@ -41,8 +32,5 @@ func (r *Repository) Insert(cambio *entity.Cambio) error {
 		cambio.USDBRL.Timestamp,
 		cambio.USDBRL.CreateDate,
 	)
-	if err != nil {
-		return err
-	}
-	return nil
+	return err
 }
