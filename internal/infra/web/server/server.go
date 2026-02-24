@@ -24,7 +24,7 @@ func (s *Server) SetRoute(usecase *usecase.UseCase) {
 	if err != nil {
 		panic(err)
 	}
-	s.mux.HandleFunc("/cambio", handler.Cambio)
+	s.mux.HandleFunc("/cotacao", handler.Cotacao)
 }
 
 func (s *Server) Start() error {
