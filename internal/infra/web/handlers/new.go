@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/usecase"
 )
 
 type Usecase struct {

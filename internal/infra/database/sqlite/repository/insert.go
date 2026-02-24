@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/entity"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/entity"
 )
 
 func (r *Repository) Insert(cambio *entity.Cambio) error {

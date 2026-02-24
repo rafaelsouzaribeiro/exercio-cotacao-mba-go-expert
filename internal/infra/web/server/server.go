@@ -3,8 +3,8 @@ package server
 import (
 	"net/http"
 
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/web/handlers"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/infra/web/handlers"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/usecase"
 )
 
 type Server struct {

@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/entity"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/entity"
 )
 
 func (h *Usecase) Cotacao(w http.ResponseWriter, r *http.Request) {

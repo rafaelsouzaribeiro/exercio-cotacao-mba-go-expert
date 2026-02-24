@@ -3,8 +3,8 @@ package di
 import (
 	"database/sql"
 
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/database/sqlite/repository"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/infra/database/sqlite/repository"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/usecase"
 )
 
 func NewServerDI(db *sql.DB) *usecase.UseCase {

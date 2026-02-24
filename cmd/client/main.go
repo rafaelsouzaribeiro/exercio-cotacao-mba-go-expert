@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/web/client"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/infra/web/client"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/usecase"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert
+module github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert
 
 go 1.22.2
 

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/database/sqlite/connection"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/di"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/web/server"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/infra/database/sqlite/connection"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/infra/di"
+	"github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/infra/web/server"
 )
 
 func main() {

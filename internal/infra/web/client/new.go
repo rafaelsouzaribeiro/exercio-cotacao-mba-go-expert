@@ -1,6 +1,6 @@
 package client
 
-import "github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
+import "github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/usecase"
 
 type Client struct {
 	usecase *usecase.UseCase

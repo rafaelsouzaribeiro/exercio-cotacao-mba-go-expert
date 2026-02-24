@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/repository"
+import "github.com/rafaelsouzaribeiro/exercicio-cotacao-mba-go-expert/internal/repository"
 
 type UseCase struct {
 	IRepository repository.IRepository
