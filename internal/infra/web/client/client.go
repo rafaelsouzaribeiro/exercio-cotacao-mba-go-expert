@@ -33,5 +33,11 @@ func (c *Client) CreateFile() error {
 		return err
 	}
 
+	err = c.usecase.CreateFile(cambio.USDBRL.Bid)
+
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
