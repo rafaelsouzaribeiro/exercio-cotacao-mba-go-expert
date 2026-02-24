@@ -9,5 +9,6 @@ import (
 
 func NewServerDI(db *sql.DB) *usecase.UseCase {
 	repository := repository.NewRepository(db)
+	repository.Create()
 	return usecase.NewUseCase(repository)
 }

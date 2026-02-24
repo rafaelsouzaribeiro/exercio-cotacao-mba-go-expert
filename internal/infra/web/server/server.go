@@ -19,11 +19,6 @@ func NewServer() *Server {
 
 func (s *Server) SetRoute(usecase *usecase.UseCase) {
 	handler := handlers.NewHandler(usecase)
-	err := handler.Create()
-
-	if err != nil {
-		panic(err)
-	}
 	s.mux.HandleFunc("/cotacao", handler.Cotacao)
 }
 
