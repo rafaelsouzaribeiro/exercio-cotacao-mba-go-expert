@@ -1,15 +1,15 @@
 package handlers
 
 import (
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase/server"
+	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
 )
 
-type UsecaseServer struct {
-	UsecaseServer *server.UseCaseServer
+type Usecase struct {
+	UsecaseServer *usecase.UseCase
 }
 
-func NewHandler(usecase *server.UseCaseServer) *UsecaseServer {
-	return &UsecaseServer{
+func NewHandler(usecase *usecase.UseCase) *Usecase {
+	return &Usecase{
 		UsecaseServer: usecase,
 	}
 }

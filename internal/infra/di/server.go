@@ -4,10 +4,10 @@ import (
 	"database/sql"
 
 	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/infra/database/sqlite/repository"
-	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase/server"
+	"github.com/rafaelsouzaribeiro/exercio-cotacao-mba-go-expert/internal/usecase"
 )
 
-func NewServerDI(db *sql.DB) *server.UseCaseServer {
+func NewServerDI(db *sql.DB) *usecase.UseCase {
 	repository := repository.NewRepository(db)
-	return server.NewServerUsecase(repository)
+	return usecase.NewUseCase(repository)
 }
